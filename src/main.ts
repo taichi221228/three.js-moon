@@ -18,8 +18,9 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(40, width / height, 1);
 camera.position.set(0, 0, 1000);
 
-const geometry = new THREE.SphereGeometry(200, 200, 200);
 const loader = new THREE.TextureLoader();
+
+const geometry = new THREE.SphereGeometry(200, 200, 200);
 const map = loader.load(moon);
 map.colorSpace = THREE.SRGBColorSpace;
 const material = new THREE.MeshPhongMaterial({
