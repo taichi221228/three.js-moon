@@ -32,9 +32,12 @@ const material = new THREE.MeshPhongMaterial({
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
-const light = new THREE.DirectionalLight(0xffffff);
-light.position.set(1, 1, 1);
-scene.add(light);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(1, 1, 1);
+scene.add(directionalLight);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.01);
+scene.add(ambientLight);
 
 renderer.render(scene, camera);
 
