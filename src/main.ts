@@ -22,7 +22,13 @@ const geometry = new THREE.SphereGeometry(200, 200, 200);
 const loader = new THREE.TextureLoader();
 const map = loader.load(moon);
 map.colorSpace = THREE.SRGBColorSpace;
-const material = new THREE.MeshBasicMaterial({ map });
+const material = new THREE.MeshPhongMaterial({
+	map,
+	bumpMap: loader.load(moon),
+	bumpScale: 0.05,
+	emissive: 0xffffff,
+	emissiveIntensity: 0.005,
+});
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
