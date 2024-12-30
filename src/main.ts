@@ -2,6 +2,7 @@ import "./style.css";
 import * as THREE from "three";
 import moonBumpMap from "./moon-bump.jpg";
 import moonMap from "./moon.jpg";
+import starsMap from "./stars.jpg";
 
 const { width, height } = { width: 1472, height: 864 };
 
@@ -36,6 +37,16 @@ const moonMaterial = new THREE.MeshPhongMaterial({
 const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
 scene.add(moonMesh);
 
+const starsGeometry = new THREE.SphereGeometry(2000, 128, 128);
+const starsTexture = loader.load(starsMap);
+starsTexture.colorSpace = THREE.SRGBColorSpace;
+const starsMaterial = new THREE.MeshBasicMaterial({
+	map: starsTexture,
+	side: THREE.BackSide,
+});
+const starsMesh = new THREE.Mesh(starsGeometry, starsMaterial);
+scene.add(starsMesh);
+
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(1, 1, 1);
 scene.add(directionalLight);
@@ -49,6 +60,6 @@ tick();
 
 function tick() {
 	requestAnimationFrame(tick);
-	mesh.rotation.y += 0.01;
+	moonMesh.rotation.y += 0.01;
 	renderer.render(scene, camera);
 }
