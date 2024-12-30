@@ -1,8 +1,9 @@
 import "./style.css";
 import * as THREE from "three";
+import moonBumpMap from "./moon-bump@8k.jpg";
 import moonMap from "./moon@8k.jpg";
 
-const { width, height } = { width: 960, height: 540 };
+const { width, height } = { width: 1472, height: 864 };
 
 const { canvas } = (() => {
 	const app = document.getElementById("app");
@@ -23,10 +24,12 @@ const loader = new THREE.TextureLoader();
 const moonGeometry = new THREE.SphereGeometry(200, 128, 128);
 const moonTexture = loader.load(moonMap);
 moonTexture.colorSpace = THREE.SRGBColorSpace;
+const moonBumpTexture = loader.load(moonBumpMap);
+moonBumpTexture.colorSpace = THREE.SRGBColorSpace;
 const moonMaterial = new THREE.MeshPhongMaterial({
 	map: moonTexture,
-	bumpMap: loader.load(moonMap),
-	bumpScale: 0.05,
+	bumpMap: moonBumpTexture,
+	bumpScale: 0.1,
 	emissive: 0xffffff,
 	emissiveIntensity: 0.005,
 });
