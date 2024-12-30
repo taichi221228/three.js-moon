@@ -1,7 +1,7 @@
 import "./style.css";
 import * as THREE from "three";
-import moonBumpMap from "./moon-bump@8k.jpg";
-import moonMap from "./moon@8k.jpg";
+import moonBumpMap from "./moon-bump.jpg";
+import moonMap from "./moon.jpg";
 
 const { width, height } = { width: 1472, height: 864 };
 
