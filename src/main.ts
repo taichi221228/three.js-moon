@@ -1,6 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
-import moonMap from "./moon@2k.jpg";
+import moonMap from "./moon@8k.jpg";
 
 const { width, height } = { width: 960, height: 540 };
 
@@ -20,7 +20,7 @@ camera.position.set(0, 0, 1000);
 
 const loader = new THREE.TextureLoader();
 
-const moonGeometry = new THREE.SphereGeometry(200, 32, 32);
+const moonGeometry = new THREE.SphereGeometry(200, 128, 128);
 const moonTexture = loader.load(moonMap);
 moonTexture.colorSpace = THREE.SRGBColorSpace;
 const moonMaterial = new THREE.MeshPhongMaterial({
