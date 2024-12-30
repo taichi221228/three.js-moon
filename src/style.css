@@ -13,6 +13,14 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+body {
+	margin: 0;
+}
+
+canvas {
+	display: block;
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;
