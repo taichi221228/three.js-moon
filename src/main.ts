@@ -20,7 +20,7 @@ camera.position.set(0, 0, 1000);
 
 const loader = new THREE.TextureLoader();
 
-const moonGeometry = new THREE.SphereGeometry(200, 200, 200);
+const moonGeometry = new THREE.SphereGeometry(200, 32, 32);
 const moonTexture = loader.load(moonMap);
 moonTexture.colorSpace = THREE.SRGBColorSpace;
 const moonMaterial = new THREE.MeshPhongMaterial({
