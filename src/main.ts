@@ -37,7 +37,7 @@ const moonMaterial = new THREE.MeshPhongMaterial({
 const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
 scene.add(moonMesh);
 
-const starsGeometry = new THREE.SphereGeometry(2000, 128, 128);
+const starsGeometry = new THREE.SphereGeometry(1000, 128, 128);
 const starsTexture = loader.load(starsMap);
 starsTexture.colorSpace = THREE.SRGBColorSpace;
 const starsMaterial = new THREE.MeshBasicMaterial({
