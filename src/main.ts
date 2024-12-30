@@ -31,8 +31,8 @@ const moonMaterial = new THREE.MeshPhongMaterial({
 	map: moonTexture,
 	bumpMap: moonBumpTexture,
 	bumpScale: 0.1,
-	emissive: 0xffffff,
-	emissiveIntensity: 0.005,
+	emissive: 0xfff0a0,
+	emissiveIntensity: 0.0025,
 });
 const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
 scene.add(moonMesh);
@@ -47,11 +47,11 @@ const starsMaterial = new THREE.MeshBasicMaterial({
 const starsMesh = new THREE.Mesh(starsGeometry, starsMaterial);
 scene.add(starsMesh);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+const directionalLight = new THREE.DirectionalLight(0xfff0a0, 1);
 directionalLight.position.set(1, 1, 1);
 scene.add(directionalLight);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.01);
+const ambientLight = new THREE.AmbientLight(0xfff0a0, 0.01);
 scene.add(ambientLight);
 
 renderer.render(scene, camera);
