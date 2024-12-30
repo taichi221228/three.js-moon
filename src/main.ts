@@ -1,6 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
-import moon from "./moon@2k.jpg";
+import moonMap from "./moon@2k.jpg";
 
 const { width, height } = { width: 960, height: 540 };
 
@@ -20,17 +20,17 @@ camera.position.set(0, 0, 1000);
 
 const loader = new THREE.TextureLoader();
 
-const geometry = new THREE.SphereGeometry(200, 200, 200);
-const map = loader.load(moon);
-map.colorSpace = THREE.SRGBColorSpace;
-const material = new THREE.MeshPhongMaterial({
-	map,
-	bumpMap: loader.load(moon),
+const moonGeometry = new THREE.SphereGeometry(200, 200, 200);
+const moonTexture = loader.load(moonMap);
+moonTexture.colorSpace = THREE.SRGBColorSpace;
+const moonMaterial = new THREE.MeshPhongMaterial({
+	map: moonTexture,
+	bumpMap: loader.load(moonMap),
 	bumpScale: 0.05,
 	emissive: 0xffffff,
 	emissiveIntensity: 0.005,
 });
-const mesh = new THREE.Mesh(geometry, material);
+const mesh = new THREE.Mesh(moonGeometry, moonMaterial);
 scene.add(mesh);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
