@@ -33,8 +33,8 @@ const moonMaterial = new THREE.MeshPhongMaterial({
 	emissive: 0xffffff,
 	emissiveIntensity: 0.005,
 });
-const mesh = new THREE.Mesh(moonGeometry, moonMaterial);
-scene.add(mesh);
+const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
+scene.add(moonMesh);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(1, 1, 1);
